@@ -188,7 +188,7 @@ march <- read_excel("F:/EXCEL/month jan to oct timeseries.xlsx",
                        sheet = "mar")
 View(march)
 
-## RETRIVING ALL ATTRIBUTES OF FEBRUARY
+## RETRIVING ALL ATTRIBUTES OF MARCH
 
 library(readxl)
 temp_mar <- read_excel("F:/EXCEL/POWER_Point_Hourly_20010101_20210331_020d1515N_082d5154E_LST(1).xlsx", 
@@ -199,7 +199,7 @@ cor(temp_mar)  ## find correlation coefficient of all attributes
 
 cr3 <- cor(temp_mar)
 
-corrplot(cr3)  ## no strong correlation between temperature and all other attributes in the month of february
+corrplot(cr3)  ## no strong correlation between temperature and all other attributes in the month of march
 
 TEMP_MAR <- ts(march$Temperature, frequency = 24) 
 
@@ -256,4 +256,302 @@ forecast_mar_arima
 plot(forecast_mar_arima)
 
 
+##IMPORT DATA OF THE MONTH APRIL
 
+library(readxl)
+april <- read_excel("F:/EXCEL/month jan to oct timeseries.xlsx", 
+                       sheet = "apr")
+View(april)
+
+## RETRIVING ALL ATTRIBUTES OF APRIL
+
+library(readxl)
+temp_apr <- read_excel("F:/EXCEL/POWER_Point_Hourly_20010101_20210331_020d1515N_082d5154E_LST(1).xlsx", 
+                       sheet = "temp4")
+View(temp_apr)
+
+cor(temp_apr)  ## find correlation coefficient of all attributes
+
+cr4 <- cor(temp_apr)
+
+corrplot(cr4)  ## no strong correlation between temperature and all other attributes in the month of april
+
+TEMP_APR <- ts(april$Temperature, frequency = 24) 
+
+View(TEMP_APR)
+
+
+plot.ts(TEMP_APR)
+
+adf.test(TEMP_APR)   ## check stationarity
+
+## seasonal naive model 
+
+
+fit_apr_naive <- snaive(TEMP_APR)
+
+print(summary(fit_apr_naive))
+
+checkresiduals(fit_apr_naive)
+
+forecast_apr_naive = forecast(fit_apr_naive)  ##forecast model 
+
+forecast_apr_naive
+
+plot(forecast_apr_naive)
+
+## exponential smoothing model
+
+
+fit_apr_exp <- ets(TEMP_APR)
+
+print(summary(fit_apr_exp))
+
+checkresiduals(fit_apr_exp)
+
+forecast_apr_exp = forecast(fit_apr_exp) ## forecast model
+
+forecast_apr_exp
+
+plot(forecast_apr_exp)
+
+
+## ARIMA model
+
+fit_apr_arima <- auto.arima(TEMP_APR)
+
+print(summary(fit_apr_arima))
+
+checkresiduals(fit_apr_arima)
+
+forecast_apr_arima = forecast(fit_apr_arima) ## forecast model
+
+forecast_apr_arima
+
+plot(forecast_apr_arima)
+
+
+
+##IMPORT DATA OF THE MONTH MAY
+
+library(readxl)
+may <- read_excel("F:/EXCEL/month jan to oct timeseries.xlsx", 
+                    sheet = "may")
+View(may)
+
+## RETRIVING ALL ATTRIBUTES OF MAY
+
+library(readxl)
+temp_may <- read_excel("F:/EXCEL/POWER_Point_Hourly_20010101_20210331_020d1515N_082d5154E_LST(1).xlsx", 
+                       sheet = "temp5")
+View(temp_may)
+
+cor(temp_may)  ## find correlation coefficient of all attributes
+
+cr5 <- cor(temp_may)
+
+corrplot(cr5)  ## no strong correlation between temperature and all other attributes in the month of may
+
+TEMP_MAY <- ts(may$Temperature, frequency = 24) 
+
+View(TEMP_MAY)
+
+
+plot.ts(TEMP_MAY)
+
+adf.test(TEMP_MAY)   ## check stationarity
+
+## seasonal naive model 
+
+
+fit_may_naive <- snaive(TEMP_MAY)
+
+print(summary(fit_may_naive))
+
+checkresiduals(fit_may_naive)
+
+forecast_may_naive = forecast(fit_may_naive)  ##forecast model 
+
+forecast_may_naive
+
+plot(forecast_may_naive)
+
+## exponential smoothing model
+
+
+fit_may_exp <- ets(TEMP_MAY)
+
+print(summary(fit_may_exp))
+
+checkresiduals(fit_may_exp)
+
+forecast_may_exp = forecast(fit_may_exp) ## forecast model
+
+forecast_may_exp
+
+plot(forecast_may_exp)
+
+
+## ARIMA model
+
+fit_may_arima <- auto.arima(TEMP_MAY)
+
+print(summary(fit_may_arima))
+
+checkresiduals(fit_may_arima)
+
+forecast_may_arima = forecast(fit_may_arima) ## forecast model
+
+forecast_may_arima
+
+plot(forecast_may_arima)
+
+
+##IMPORT DATA OF THE MONTH JUNE
+
+library(readxl)
+june <- read_excel("F:/EXCEL/month jan to oct timeseries.xlsx", 
+                  sheet = "jun")
+View(june)
+
+## RETRIVING ALL ATTRIBUTES OF JUNE
+
+library(readxl)
+temp_jun <- read_excel("F:/EXCEL/POWER_Point_Hourly_20010101_20210331_020d1515N_082d5154E_LST(1).xlsx", 
+                       sheet = "temp6")
+View(temp_jun)
+
+cor(temp_jun)  ## find correlation coefficient of all attributes
+
+cr6 <- cor(temp_jun)
+
+corrplot(cr6)  ## no strong correlation between temperature and all other attributes in the month of june
+
+TEMP_JUN <- ts(june$Temperature, frequency = 24) 
+
+View(TEMP_JUN)
+
+
+plot.ts(TEMP_JUN)
+
+adf.test(TEMP_JUN)   ## check stationarity
+
+## seasonal naive model 
+
+
+fit_jun_naive <- snaive(TEMP_JUN)
+
+print(summary(fit_jun_naive))
+
+checkresiduals(fit_jun_naive)
+
+forecast_jun_naive = forecast(fit_jun_naive)  ##forecast model 
+
+forecast_jun_naive
+
+plot(forecast_jun_naive)
+
+## exponential smoothing model
+
+
+fit_jun_exp <- ets(TEMP_JUN)
+
+print(summary(fit_jun_exp))
+
+checkresiduals(fit_jun_exp)
+
+forecast_jun_exp = forecast(fit_jun_exp) ## forecast model
+
+forecast_jun_exp
+
+plot(forecast_jun_exp)
+
+
+## ARIMA model
+
+fit_jun_arima <- auto.arima(TEMP_JUN)
+
+print(summary(fit_jun_arima))
+
+checkresiduals(fit_jun_arima)
+
+forecast_jun_arima = forecast(fit_jun_arima) ## forecast model
+
+forecast_jun_arima
+
+plot(forecast_jun_arima)
+
+
+##IMPORT DATA OF THE MONTH JULY
+
+library(readxl)
+july <- read_excel("F:/EXCEL/month jan to oct timeseries.xlsx", 
+                   sheet = "jul")
+View(july)
+
+## RETRIVING ALL ATTRIBUTES OF JULY
+
+library(readxl)
+temp_jul <- read_excel("F:/EXCEL/POWER_Point_Hourly_20010101_20210331_020d1515N_082d5154E_LST(1).xlsx", 
+                       sheet = "temp7")
+View(temp_jul)
+
+cor(temp_jul)  ## find correlation coefficient of all attributes
+
+cr7 <- cor(temp_jul)
+
+corrplot(cr7)  ## no strong correlation between temperature and all other attributes in the month of july
+
+TEMP_JUL <- ts(july$Temperature, frequency = 24) 
+
+View(TEMP_JUL)
+
+
+plot.ts(TEMP_JUL)
+
+adf.test(TEMP_JUL)   ## check stationarity
+
+## seasonal naive model 
+
+
+fit_jul_naive <- snaive(TEMP_JUL)
+
+print(summary(fit_jul_naive))
+
+checkresiduals(fit_jul_naive)
+
+forecast_jul_naive = forecast(fit_jul_naive)  ##forecast model 
+
+forecast_jul_naive
+
+plot(forecast_jul_naive)
+
+## exponential smoothing model
+
+
+fit_jul_exp <- ets(TEMP_JUL)
+
+print(summary(fit_jul_exp))
+
+checkresiduals(fit_jul_exp)
+
+forecast_jul_exp = forecast(fit_jul_exp) ## forecast model
+
+forecast_jul_exp
+
+plot(forecast_jul_exp)
+
+
+## ARIMA model
+
+fit_jul_arima <- auto.arima(TEMP_JUL)
+
+print(summary(fit_jul_arima))
+
+checkresiduals(fit_jul_arima)
+
+forecast_jul_arima = forecast(fit_jul_arima) ## forecast model
+
+forecast_jul_arima
+
+plot(forecast_jul_arima)
