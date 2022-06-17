@@ -60,6 +60,164 @@ adf.test(TEMP_JAN)  ## stationarity checking
 
 library(tidyverse)
 
+jan_70 <-temp1[1:10417 , 1]  ## 70% data extracting for training
+
+View(jan_70)
+
+## forecast for 70% training data
+
+## seasonal naive model 
+
+fit_jan70_naive <- snaive(jan_70)
+
+print(summary(fit_jan70_naive))
+
+checkresiduals(fit_jan70_naive)
+
+forecast_jan70_naive = forecast(fit_jan70_naive)  ##forecast model 
+
+forecast_jan70_naive
+
+plot(forecast_jan70_naive)
+
+jan_70 <- ts(temp1$T2M[1:10417])
+
+View(jan_70)
+
+## exponential smoothing model
+
+fit_jan70_exp <- ets(jan_70)
+
+print(summary(fit_jan70_exp))
+
+checkresiduals(fit_jan70_exp)
+
+forecast_jan70_exp = forecast(fit_jan70_exp) ## forecast model
+
+forecast_jan70_exp
+
+plot(forecast_jan70_exp)
+
+## ARIMA model
+
+fit_jan70_arima <- auto.arima(jan_70)
+
+print(summary(fit_jan70_arima))
+
+checkresiduals(fit_jan70_arima)
+
+forecast_jan70_arima = forecast(fit_jan70_arima) ## forecast model
+
+forecast_jan70_arima
+
+plot(forecast_jan70_arima)
+
+jan_80 <-temp1[1:11905 , 1]  ## 80% data extracting for training
+
+View(jan_80)
+
+## forecast for 80% training data
+
+## seasonal naive model 
+
+fit_jan80_naive <- snaive(jan_80)
+
+print(summary(fit_jan80_naive))
+
+checkresiduals(fit_jan80_naive)
+
+forecast_jan80_naive = forecast(fit_jan80_naive)  ##forecast model 
+
+forecast_jan80_naive
+
+plot(forecast_jan80_naive)
+
+jan_80 <- ts(temp1$T2M[1:11905])
+
+View(jan_80)
+
+## exponential smoothing model
+
+fit_jan80_exp <- ets(jan_80)
+
+print(summary(fit_jan80_exp))
+
+checkresiduals(fit_jan80_exp)
+
+forecast_jan80_exp = forecast(fit_jan80_exp) ## forecast model
+
+forecast_jan80_exp
+
+plot(forecast_jan80_exp)
+
+## ARIMA model
+
+fit_jan80_arima <- auto.arima(jan_80)
+
+print(summary(fit_jan80_arima))
+
+checkresiduals(fit_jan80_arima)
+
+forecast_jan80_arima = forecast(fit_jan80_arima) ## forecast model
+
+forecast_jan80_arima
+
+plot(forecast_jan80_arima)
+
+jan_90 <-temp1[1:13394 , 1]  ## 90% data extracting for training
+
+View(jan_90)
+
+## forecast for 90% training data
+
+## seasonal naive model 
+
+fit_jan90_naive <- snaive(jan_90)
+
+print(summary(fit_jan90_naive))
+
+checkresiduals(fit_jan90_naive)
+
+forecast_jan90_naive = forecast(fit_jan90_naive)  ##forecast model 
+
+forecast_jan90_naive
+
+plot(forecast_jan90_naive)
+
+jan_90 <- ts(temp1$T2M[1:13394])
+
+View(jan_90)
+
+## exponential smoothing model
+
+fit_jan90_exp <- ets(jan_90)
+
+print(summary(fit_jan90_exp))
+
+checkresiduals(fit_jan90_exp)
+
+forecast_jan90_exp = forecast(fit_jan90_exp) ## forecast model
+
+forecast_jan90_exp
+
+plot(forecast_jan90_exp)
+
+## ARIMA model
+
+fit_jan90_arima <- auto.arima(jan_90)
+
+print(summary(fit_jan90_arima))
+
+checkresiduals(fit_jan90_arima)
+
+forecast_jan80_arima = forecast(fit_jan80_arima) ## forecast model
+
+forecast_jan80_arima
+
+plot(forecast_jan80_arima)
+
+##for whole data set
+
 ## seasonal naive model 
 
 
@@ -136,8 +294,164 @@ plot.ts(TEMP_FEB)
 
 adf.test(TEMP_FEB)  ## stationarity checking
 
+
+feb_70 <-temp_feb[1:9476 , 1]  ## 70% data extracting for training
+
+View(feb_70)
+
+## forecast for 70% training data
+
 ## seasonal naive model 
 
+fit_feb70_naive <- snaive(feb_70)
+
+print(summary(fit_feb70_naive))
+
+checkresiduals(fit_feb70_naive)
+
+forecast_feb70_naive = forecast(fit_feb70_naive)  ##forecast model 
+
+forecast_feb70_naive
+
+plot(forecast_feb70_naive)
+
+feb_70 <- ts(temp_feb[1:9476])
+
+View(feb_70)
+
+## exponential smoothing model
+
+fit_feb70_exp <- ets(feb_70)
+
+print(summary(fit_feb70_exp))
+
+checkresiduals(fit_feb70_exp)
+
+forecast_feb70_exp = forecast(fit_feb70_exp) ## forecast model
+
+forecast_feb70_exp
+
+plot(forecast_feb70_exp)
+
+## ARIMA model
+
+fit_feb70_arima <- auto.arima(feb_70)
+
+print(summary(fit_feb70_arima))
+
+checkresiduals(fit_feb70_arima)
+
+forecast_feb70_arima = forecast(fit_feb70_arima) ## forecast model
+
+forecast_feb70_arima
+
+plot(forecast_feb70_arima)
+
+feb_80 <-temp_feb[1:10843 , 1]  ## 80% data extracting for training
+
+View(feb_80)
+
+## forecast for 80% training data
+
+## seasonal naive model 
+
+fit_feb80_naive <- snaive(feb_80)
+
+print(summary(fit_feb80_naive))
+
+checkresiduals(fit_feb80_naive)
+
+forecast_feb80_naive = forecast(fit_feb80_naive)  ##forecast model 
+
+forecast_feb80_naive
+
+plot(forecast_feb80_naive)
+
+feb_80 <- ts(temp_feb[1:10843])
+
+View(feb_80)
+
+## exponential smoothing model
+
+fit_feb80_exp <- ets(feb_80)
+
+print(summary(fit_feb80_exp))
+
+checkresiduals(fit_feb80_exp)
+
+forecast_feb80_exp = forecast(fit_feb80_exp) ## forecast model
+
+forecast_feb80_exp
+
+plot(forecast_feb80_exp)
+
+## ARIMA model
+
+fit_feb80_arima <- auto.arima(feb_80)
+
+print(summary(fit_feb80_arima))
+
+checkresiduals(fit_feb80_arima)
+
+forecast_feb80_arima = forecast(fit_feb80_arima) ## forecast model
+
+forecast_feb80_arima
+
+plot(forecast_feb80_arima)
+
+feb_90 <-temp_feb[1:12185]  ## 90% data extracting for training
+
+View(feb_90)
+
+## forecast for 90% training data
+
+## seasonal naive model 
+
+fit_feb90_naive <- snaive(feb_90)
+
+print(summary(fit_feb90_naive))
+
+checkresiduals(fit_feb90_naive)
+
+forecast_feb90_naive = forecast(fit_feb90_naive)  ##forecast model 
+
+forecast_feb90_naive
+
+plot(forecast_feb90_naive)
+
+feb_90 <- ts(temp_feb[1:12185])
+
+View(feb_90)
+
+## exponential smoothing model
+
+fit_feb90_exp <- ets(feb_90)
+
+print(summary(fit_feb90_exp))
+
+checkresiduals(fit_feb90_exp)
+
+forecast_feb90_exp = forecast(fit_feb90_exp) ## forecast model
+
+forecast_feb90_exp
+
+plot(forecast_feb90_exp)
+
+## ARIMA model
+
+fit_feb90_arima <- auto.arima(feb_90)
+
+print(summary(fit_feb90_arima))
+
+checkresiduals(fit_feb90_arima)
+
+forecast_feb90_arima = forecast(fit_feb90_arima) ## forecast model
+
+forecast_feb90_arima
+
+plot(forecast_feb90_arima)
+
+## seasonal naive model 
 
 fit_feb_naive <- snaive(TEMP_FEB)
 
@@ -153,7 +467,6 @@ plot(forecast_feb_naive)
 
 ## exponential smoothing model
 
-
 fit_feb_exp <- ets(TEMP_FEB)
 
 print(summary(fit_feb_exp))
@@ -165,7 +478,6 @@ forecast_feb_exp = forecast(fit_feb_exp) ## forecast model
 forecast_feb_exp
 
 plot(forecast_feb_exp)
-
 
 ## ARIMA model
 
